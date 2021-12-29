@@ -1,6 +1,28 @@
 {
   "dependencies": {
-    "inquirer": "^8.2.0",
+    "inquirer": "^8.2.0"
+  },
+  "name": "oop-challenge",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coleleg/OOP-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coleleg/OOP-challenge/issues"
+  },
+  "homepage": "https://github.com/coleleg/OOP-challenge#readme",
+  "devDependencies": {
     "jest": "^27.4.5"
   }
 }
