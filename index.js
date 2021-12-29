@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 const Employee = require('./lib/Employee');
 
+const team = [];
+
 const questions = [
         {
             type: 'text',
@@ -25,6 +27,5 @@ function init() {
 
 init()
     .then(({ name, id, email}) => {
-        console.log(new Employee(name, id, email));
         return new Employee (name, id, email);
     });
