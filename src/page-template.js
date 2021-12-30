@@ -23,7 +23,7 @@ const engineerCard = function (engineer) {
             <div class="card-body container bg-dark">
                 <p class="card-text text-light">ID: ${engineer.id}</p>
                 <p class="card-text text-light">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="card-text text-light">GitHub: <a href="github.com/${engineer.github}}">${engineer.github}</p>
+                <p class="card-text text-light">GitHub: <a href="github.com/${engineer.github}}">${engineer.github}</a></p>
             </div>
     </div> 
 `};
@@ -103,10 +103,12 @@ const generatePage = (team) => {
                     const intern = internCard(teamMember);
                     cards.push(intern);
                 }
+            
+            
+            }
 
-    pageData(cards);
-
-    }
+   const cardGeneration = pageData(cards);
+   return cardGeneration;
 
 
 }

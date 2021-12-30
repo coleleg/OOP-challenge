@@ -99,7 +99,6 @@ function addNewEmployee () {
                 return addNewEmployee(team);
             }
             else {
-                console.log(team);
                 return team;
             }
           
@@ -110,7 +109,7 @@ function addNewEmployee () {
 
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/index.htlm', fileContent, err => {
+        fs.writeFile('./dist/index.html', fileContent, err => {
             if(err) {
                 reject(err);
                 return;
