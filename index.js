@@ -1,8 +1,14 @@
+// inquirer
 const inquirer = require('inquirer');
-const Employee = require('./lib/Employee');
+
+// classes
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+
+// generate page
+const generatePage = require('./src/page-template');
+const fs = require('fs');
 
 const team = [];
 
@@ -30,8 +36,6 @@ const team = [];
 ])
     .then(({name, id, email, officeNumber}) => {
         const manager = new Manager(name, id, email, officeNumber);
-        console.log(manager);
-
         team.push(manager);   
     })
 
@@ -88,13 +92,9 @@ Adding Team Member
 
             if (role === "Engineer") {
                 employee = new Engineer(name, id, email, github);
-                
-                console.log(employee);
             } 
                 else if (role === "Intern") {
                     employee = new Intern(name, id, email, school)
-            
-                    console.log(employee);
                 }
 
             team.push(employee);
@@ -112,8 +112,33 @@ Adding Team Member
 
 };
 
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/index.htlm', fileContent, err => {
+            if(err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'Team Page Generated!'
+            });
+        });
+    });
+};
+
 promptManager()
-    .then(addNewEmployee);
+    .then(addNewEmployee)
+    .then(team => {
+        return generatePage(team);
+    })
+    .then(pageData => {
+        return writeFile(pageData);
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
     
    
