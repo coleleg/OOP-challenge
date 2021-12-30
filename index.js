@@ -43,11 +43,7 @@ const team = [];
 
 
 function addNewEmployee () {
-console.log(`
-===================
-Adding Team Member
-===================
-`);
+
     return inquirer.prompt([{
         type: 'list',
         name: 'role',
