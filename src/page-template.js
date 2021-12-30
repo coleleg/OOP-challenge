@@ -106,9 +106,9 @@ const generatePage = (team) => {
             
             
             }
-
-   const cardGeneration = pageData(cards);
-   return cardGeneration;
+    const joinCards = cards.join('');
+    const cardGeneration = pageData(joinCards);
+    return cardGeneration;
 
 
 }
