@@ -6,7 +6,7 @@ const Intern = require('./lib/Intern');
 
 const team = [];
 
- function promptManager () {
+ const promptManager = () => {
     return inquirer.prompt([{
         type: 'input',
         name: 'name',
@@ -32,27 +32,23 @@ const team = [];
         const manager = new Manager(name, id, email, officeNumber);
         console.log(manager);
 
-        team.push(manager);
-        
+        team.push(manager);   
     })
-    .then(confirmNewEmployee);
+
 };
 
-function confirmNewEmployee () {
-    return inquirer.prompt([{
-        type: 'confirm',
-        name: 'confirmNew',
-        message: 'Would you like to add a new Employee?',
-        default: true
-    }])
-};
 
 function addNewEmployee () {
+console.log(`
+===================
+Adding Team Member
+===================
+`);
     return inquirer.prompt([{
         type: 'list',
         name: 'role',
         message: 'Is this employee an Engineer or Intern?',
-        choices: ['Enginner', 'Intern']
+        choices: ['Engineer', 'Intern']
     },
     {
         type: 'input',
@@ -73,16 +69,53 @@ function addNewEmployee () {
                 type: 'input',
                 name: 'github',
                 message: `What is the Engineer's github username?`,
-                when: function(answers) { answers.role === 'Engineer'}
+                when: (choice) => choice.role === "Engineer"
             },
             {
                 type: 'input',
                 name: 'school',
                 message: `What is the name of the Intern's school?`,
-                when: function(answers) { answers.role === 'Intern'}
-            }])
-}
+                when: (choice) => choice.role === "Intern"
+            },
+    {
+        type: 'confirm',
+        name: 'confirmNew',
+        message: 'Would you like to add a new Employee?',
+        default: true
+    }])
+        .then(({role, name, id, email, github, school, confirmNew}) => {
+            let employee;
 
-addNewEmployee();
+            if (role === "Engineer") {
+                employee = new Engineer(name, id, email, github);
+                
+                console.log(employee);
+            } 
+                else if (role === "Intern") {
+                    employee = new Intern(name, id, email, school)
+            
+                    console.log(employee);
+                }
 
- 
+            team.push(employee);
+
+            if (confirmNew) {
+                return addNewEmployee(team);
+            }
+            else {
+                console.log(team);
+                return team;
+            }
+          
+        });
+
+
+};
+
+promptManager()
+    .then(addNewEmployee);
+
+    
+   
+
+    

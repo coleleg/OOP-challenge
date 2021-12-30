@@ -19,5 +19,5 @@ test(`returns 'Engineer'`, () => {
     const engineer = new Engineer("John Doe", "12345", "engineer@company.com", "engineEar");
 
     expect(engineer.getRole()).toBe("Engineer");
-})
+});
 
