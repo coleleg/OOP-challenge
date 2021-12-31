@@ -22,7 +22,7 @@
   Users can clone this repository from github.com/coleleg/team-page-generator.  Node is required, as well as the fs module and inquirer.js.  For those who wish to do testing, this application uses Jest.
   
   ## Usage
-  This application can be run from the terminal using the <node index> command.  After answering all prompted questions, users can view their generated webpage in    dist/index.html.
+  This application can be run from the terminal using the <node index> command.  After answering all prompted questions, users can view their generated webpage in    dist/index.html.  A walkthrough video can be found [here](https://watch.screencastify.com/v/RWZ0AfqxV5fBiVy4vSv5).
   
   ## Licenses
   This application was made using the MIT license.
