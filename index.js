@@ -27,15 +27,15 @@ const team = [];
         }
     },
     {
-        type: 'number',
+        type: 'input',
         name: 'id',
         message: `What is the Team Manager's employee ID number?`,
         validate: idInput => {
-            if(isNaN(idInput)) {
-                return true;
-            } else {
-                console.log('Please enter a valid employee ID as a number.')
+            if (isNaN(idInput)) {
+                console.log('Please enter an employee ID NUMBER.');
                 return false;
+            } else {
+                return true;
             }
         }
     },
@@ -43,28 +43,28 @@ const team = [];
         type: 'input',
         name: 'email',
         message: `What is the Team Manager's email?`,
-        validate: emailInput => {
+        validate: function (email) {
   
-            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
 
             if (valid) {
                 return true;
             } else {
-                console.log('Please enter a valid email')
+                console.log("Please enter a valid email.")
                 return false;
             }
         }
     },
     {
-        type: 'number',
+        type: 'input',
         name: 'officeNumber',
         message: `What is the Team Manager's office number?`,
-        validate: idInput => {
-            if(isNaN(idInput)) {
-                return true;
-            } else {
-                console.log('Please enter a valid office number as a number.')
+        validate: officeInput => {
+            if (isNaN(officeInput)) {
+                console.log('Please enter an office NUMBER.');
                 return false;
+            } else {
+                return true;
             }
         }
     }
@@ -99,15 +99,15 @@ function addNewEmployee () {
         }
     },
     {
-        type: 'number',
+        type: 'input',
         name: 'id',
         message: `What is the employee's ID number?`,
         validate: idInput => {
-            if(isNaN(idInput)) {
-                return true;
-            } else {
-                console.log('Please enter a valid employee ID as a number.')
+            if (isNaN(idInput)) {
+                console.log('Please enter an employee ID NUMBER.');
                 return false;
+            } else {
+                return true;
             }
         }
     },
@@ -115,14 +115,14 @@ function addNewEmployee () {
         type: 'input',
         name: 'email',
         message: `What is the emplyoee's email?`,
-        validate: emailInput => {
+        validate: function (email) {
   
-            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
 
             if (valid) {
                 return true;
             } else {
-                console.log('Please enter a valid email')
+                console.log(".  Please enter a valid email.")
                 return false;
             }
         }
