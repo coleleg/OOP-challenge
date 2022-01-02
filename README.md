@@ -16,13 +16,13 @@
   * [Questions](#questions)
 
   ## Description
-  This is a Node.js command line application that demonstrates knowledge of inquirer.js and TDD via Jest.  Team Page Generator prompts users with a series of questions about their employee-team and generates an HTML page that displays individual cards for each team member.
+  This is a Node.js command line application that demonstrates knowledge of inquirer.js and TDD via Jest.  Team Page Generator prompts users with a series of questions about their employee-team and generates an HTML page displaying individual cards for each team member.
  
   ## Installation
   Users can clone this repository from github.com/coleleg/team-page-generator.  Node is required, as well as the fs module and inquirer.js.  For those who wish to do testing, this application uses Jest.
   
   ## Usage
-  This application can be run from the terminal using the <node index> command.  After answering all prompted questions, users can view their generated webpage in    dist/index.html.  A walkthrough video can be found [here](https://drive.google.com/file/d/1qlB_rOKy05aTOW_Cvtm2hhgPLZRllKVA/view).
+  This application can be run from the terminal using the `node index` command.  After answering all prompted questions, users can view their generated webpage in    dist/index.html.  A walkthrough video can be found [here](https://drive.google.com/file/d/1qlB_rOKy05aTOW_Cvtm2hhgPLZRllKVA/view).
   
   ## Licenses
   This application was made using the MIT license.
